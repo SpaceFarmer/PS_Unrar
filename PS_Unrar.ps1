@@ -16,7 +16,7 @@
     .PARAMETER DestinationPath
     The path where you want the files you unrar to end up
     .PARAMETER Filter
-    This gives you the opotunity to filter out folders that start with for example a certian letter in a path that contains multiple folders
+    This gives you the opportunity to filter out folders that start with for example a certian letter in a path that contains multiple folders
     .PARAMETER UnrarEXEPath
     This parameter is used if you need to override the default path to the UnRAR.exe included in the WinRAR installation
     .NOTES
@@ -33,7 +33,7 @@ Param (
     [string]$DestinationPath,
     [Parameter(Mandatory=$False)]
     [string]$Filter="false",
-	[Parameter(Mandatory=$False)]
+    [Parameter(Mandatory=$False)]
     [string]$UnrarEXEPath="C:\Program Files\WinRAR\UnRAR.exe"
 )
 
