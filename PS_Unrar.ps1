@@ -6,11 +6,11 @@
     Script to unrar/unpack multiple folders contaiong .rar archives.
     This script works recurive on subfolders and has the ability woth a filter to limit what that folders recursed are unpacked.
     .EXAMPLE
-    .\PS_Unrar.ps1 -SourcePath X:\Film\HD\GreatMovie -DestinationPath C:\Unrar
-    Unrar contents of X:\Film\HD\GreatMovie to C:\Unrar
+    .\PS_Unrar.ps1 -SourcePath "X:\Film\HD\GreatMovie" -DestinationPath "C:\Unrar"
+    Unrar contents of X:\Film\HD\GreatMovie to C:\Unrar:
     .EXAMPLE
-    .\PS_Unrar.ps1 -SourcePath X:\Film\HD\ -DestinationPath C:\Unrar -Filter *S
-    Unrar contents of X:\Film\HD\ to C:\Unrar, but only folders that start with the letter "S"
+    .\PS_Unrar.ps1 -SourcePath "X:\Film\HD" -DestinationPath "C:\Unrar" -Filter "*S"
+    Unrar contents of X:\Film\HD to C:\Unrar, but only the folders that starts with the letter "S"
     .PARAMETER SourcePath
     The path to where the rar files to be unrared ar located
     .PARAMETER DestinationPath
@@ -47,6 +47,7 @@ $ContainsSubFolders = $true
 # Check unrar.exe default path
 if ((Test-Path -Path $UnrarEXEPath) -ne $true){
     Write-Warning 'Unrar.exe not present in default unrar folder, C:\Program Files\WinRAR\UnRAR.exe'
+    Write-Warning 'please install it or provide the correct path to Unrar.exe with "-UnrarEXEPath" parameter'
     break
 }
 
