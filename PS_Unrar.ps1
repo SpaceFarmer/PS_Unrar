@@ -51,9 +51,9 @@ if ((Test-Path -Path $UnrarEXEPath) -ne $true){
     break
 }
 
-# Test to see if Unpackdir is present
+# Test to see if destination path is present
 if ((Test-Path -Path $DestinationPath) -ne $true){
-    # If not present, create Unpackdir
+    # If not present, create the destination path
     Write-Warning "The provided destination path did not exist, creating folder: $DestinationPath"
     mkdir $DestinationPath
 }
@@ -92,6 +92,7 @@ If ($ContainsSubFolders -eq $true) {
 	$FolderFiles = (Get-ChildItem -File -Path $Folder\* -Include *.rar -Depth 0)
 }
 
+# Create a collection of the top-level folders and sublelvel folders combined
 $RarFiles = $FolderFiles.FullName + $SubFolderFiles.FullName
 
 Write-Host "----" -ForegroundColor Red
