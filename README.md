@@ -12,4 +12,4 @@ Unrar contents of X:\Film\HD\GreatMovie to C:\Unrar:
 
 Unrar contents of X:\Film\HD to C:\Unrar, but only the folders that starts with the letter "S":
 
-`.\PS_Unrar.ps1 -SourcePath "X:\Film\HD" -DestinationPath "C:\Unrar" -Filter "*S"`
+`.\PS_Unrar.ps1 -SourcePath "X:\Film\HD" -DestinationPath "C:\Unrar" -Filter "S*"`
